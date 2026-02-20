@@ -1,0 +1,57 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Launch Dev Server",
+			"runtimeExecutable": "npm",
+			"runtimeArgs": ["run", "dev", "--", "--open"],
+			"console": "integratedTerminal",
+			"skipFiles": ["<node_internals>/**"]
+		},
+		{
+			"type": "firefox",
+			"request": "launch",
+			"name": "Debug in Firefox",
+			"url": "http://localhost:5173",
+			"webRoot": "${workspaceFolder}"
+		},
+		{
+			"type": "chrome",
+			"request": "launch",
+			"name": "Debug in Chrome",
+			"url": "http://localhost:5173",
+			"webRoot": "${workspaceFolder}"
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Debug Current File",
+			"program": "${file}",
+			"skipFiles": ["<node_internals>/**"],
+			"outFiles": ["${workspaceFolder}/dist/**/*.js"]
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Debug Tests",
+			"program": "${workspaceFolder}/node_modules/vitest/vitest.mjs",
+			"args": ["run", "${file}"],
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen"
+		}
+	],
+	"compounds": [
+		{
+			"name": "Dev Server + Firefox",
+			"configurations": ["Launch Dev Server", "Debug in Firefox"],
+			"stopAll": true
+		},
+		{
+			"name": "Dev Server + Chrome",
+			"configurations": ["Launch Dev Server", "Debug in Chrome"],
+			"stopAll": true
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"recommendations": [
+		"svelte.svelte-vscode",
+		"esbenp.prettier-vscode",
+		"vitest.explorer",
+		"usernamehw.errorlens",
+		"firefox-devtools.vscode-firefox-debug",
+		"dbaeumer.vscode-eslint",
+		"ms-azuretools.vscode-docker",
+		"inlang.vs-code-extension"
+	]
+}
