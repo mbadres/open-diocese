@@ -1,7 +1,10 @@
 <script lang="ts">
+	import '@fortawesome/fontawesome-free/css/all.min.css';
+	import '../app.css';
+
 	import { page } from '$app/state';
-	import { locales, localizeHref } from '$lib/paraglide/runtime';
 	import favicon from '$lib/assets/favicon.svg';
+	import { locales, localizeHref } from '$lib/paraglide/runtime';
 
 	let { children } = $props();
 </script>
@@ -9,6 +12,7 @@
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
 {@render children()}
+
 <div style="display:none">
 	{#each locales as locale}
 		<a href={localizeHref(page.url.pathname, { locale })}>
