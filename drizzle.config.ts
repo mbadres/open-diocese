@@ -1,15 +1,29 @@
 import { defineConfig } from 'drizzle-kit';
 
-const { POSTGRES_HOST, POSTGRES_PORT, POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB } =
-	process.env;
-if (!POSTGRES_HOST || !POSTGRES_PORT || !POSTGRES_USER || !POSTGRES_PASSWORD || !POSTGRES_DB)
-	throw new Error('One or more POSTGRES_* env variables are not set');
+const {
+	DATABASE_TYPE,
+	DATABASE_HOST,
+	DATABASE_PORT,
+	DATABASE_USER,
+	DATABASE_PASSWORD,
+	DATABASE_NAME
+} = process.env;
+
+if (
+	!DATABASE_TYPE ||
+	!DATABASE_HOST ||
+	!DATABASE_PORT ||
+	!DATABASE_USER ||
+	!DATABASE_PASSWORD ||
+	!DATABASE_NAME
+)
+	throw new Error('One or more DATABASE_* env variables are not set');
 
 export default defineConfig({
-	schema: './src/lib/server/db/schema.ts',
-	dialect: 'postgresql',
+	schema: `./src/lib/server/db/schema.${DATABASE_TYPE}.ts`,
+	dialect: DATABASE_TYPE === 'mysql' ? 'mysql' : 'postgresql',
 	dbCredentials: {
-		url: `postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}`,
+		url: `${DATABASE_TYPE}://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}`
 	},
 	verbose: true,
 	strict: true
