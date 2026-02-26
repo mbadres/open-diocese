@@ -35,6 +35,20 @@
 		{
 			"type": "node",
 			"request": "launch",
+			"name": "Drizzle Studio",
+			"runtimeExecutable": "npm",
+			"runtimeArgs": ["run", "db:studio"],
+			"console": "integratedTerminal",
+			"skipFiles": ["<node_internals>/**"],
+			"serverReadyAction": {
+				"pattern": "Studio is up and running",
+				"action": "openExternally",
+				"uriFormat": "https://local.drizzle.studio"
+			}
+		},
+		{
+			"type": "node",
+			"request": "launch",
 			"name": "Debug Tests",
 			"program": "${workspaceFolder}/node_modules/vitest/vitest.mjs",
 			"args": ["run", "${file}"],
