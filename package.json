@@ -50,8 +50,10 @@
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-free": "^7.2.0",
-		"bulma": "^1.0.4",
+		"@tailwindcss/vite": "^4.2.1",
+		"daisyui": "^5.5.19",
 		"mysql2": "^3.18.0",
-		"postgres": "^3.4.8"
+		"postgres": "^3.4.8",
+		"tailwindcss": "^4.2.1"
 	}
 }
