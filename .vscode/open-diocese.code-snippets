@@ -1,0 +1,22 @@
+{
+	"Svelte Component": {
+		"scope": "svelte",
+		"prefix": "scomp",
+		"body": [
+			"<script lang=\"ts\">",
+			"\t$1",
+			"</script>",
+			"",
+			"$2"
+		],
+		"description": "Basic Svelte component"
+	},
+	"DB Query": {
+		"scope": "typescript",
+		"prefix": "dbq",
+		"body": [
+			"const $1 = await db.select().from($2);"
+		],
+		"description": "Drizzle DB select query"
+	}
+}
