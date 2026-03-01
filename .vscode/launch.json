@@ -6,7 +6,7 @@
 			"request": "launch",
 			"name": "Launch Dev Server",
 			"runtimeExecutable": "npm",
-			"runtimeArgs": ["run", "dev", "--", "--open"],
+			"runtimeArgs": ["run", "dev"],
 			"console": "integratedTerminal",
 			"skipFiles": ["<node_internals>/**"]
 		},
