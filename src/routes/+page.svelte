@@ -1,9 +1,13 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import Footer from '$lib/components/ui/Footer.svelte';
+	import Header from '$lib/components/ui/Header.svelte';
+	import Title from '$lib/components/ui/Title.svelte';
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
-
-<a href={resolve('/login')}>better-auth</a>
-<a href={resolve('/paraglide')}>paraglide</a>
+<div class="flex flex-col min-h-screen">
+	<Header />
+	<div class="grow">
+		<Title>Home</Title>
+	</div>
+	<Footer />
+</div>
