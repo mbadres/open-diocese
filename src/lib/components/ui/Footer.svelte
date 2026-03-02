@@ -2,7 +2,7 @@
 	import { projectTitle } from '$lib/utilities/meta';
 </script>
 
-<div class="flex items-center p-3.25 border-t-2 bg-base-300">
+<div class="flex items-center p-3.25 border-t-2">
 	<span class="font-semibold">© {new Date().getFullYear()} {projectTitle}</span>
 	<div class="grow"></div>
 	<div>

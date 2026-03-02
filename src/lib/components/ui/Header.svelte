@@ -1,12 +1,12 @@
 <script>
-	import cross from '$lib/assets/cross.svg';
+	import Cross from '$lib/components/utilities/Cross.svelte';
 	import { projectTitle } from '$lib/utilities/meta';
 </script>
 
 <div class="navbar min-h-auto h-13">
 	<div class="flex-none">
 		<div class="flex items-center">
-			<span class="flex-none"><img class="w-5 h-5 mx-4" src={cross} alt="Logo" /></span>
+			<Cross class="w-5 h-5 mx-4 text-primary" />
 			<span class="flex-none text-l font-semibold">{projectTitle}</span>
 		</div>
 	</div>
@@ -28,9 +28,3 @@
 		</ul>
 	</div>
 </div>
-
-<style>
-	.navbar {
-		background-color: var(--color-red-500);
-	}
-</style>

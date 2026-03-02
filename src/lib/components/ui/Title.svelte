@@ -6,5 +6,10 @@
 </script>
 
 <CopticBackground>
-	{@render children()}
+	<div class="flex">
+		<div class="flex-1"></div>
+		<div class="flex-2 p-16 bg-primary-content text-primary text-4xl font-bold">
+			{@render children()}
+		</div>
+	</div>
 </CopticBackground>

@@ -6,13 +6,13 @@
 	let { children }: { children: Snippet } = $props();
 </script>
 
-<div class="relative overflow-hidden bg-primary/50">
-	<div class="absolute inset-0 -z-10 text-justify text-primary-content">
+<div class="relative overflow-hidden bg-primary">
+	<div class="absolute inset-0 text-justify text-primary-content opacity-20 select-none">
 		<Coptic>
 			<CopticSermonMountain />
 		</Coptic>
 	</div>
-	<div>
+	<div class="relative text-primary-content z-10">
 		{@render children?.()}
 	</div>
 </div>
