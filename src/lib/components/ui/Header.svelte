@@ -10,9 +10,9 @@
 			<span class="flex-none text-l font-semibold">{projectTitle}</span>
 		</div>
 	</div>
-	<div class="flex-1"></div>
+	<div class="grow"></div>
 	<div class="flex-none"></div>
-	<div class="flex-1"></div>
+	<div class="grow"></div>
 	<div class="flex-none">
 		<ul class="menu menu-horizontal">
 			<li><a href={null}>Link</a></li>
