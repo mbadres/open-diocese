@@ -1,6 +1,23 @@
-<script>
+<script lang="ts">
+	import { resolve } from '$app/paths';
+	import type { Pathname } from '$app/types';
 	import { projectTitle } from '$lib/utilities/meta';
 	import Cross from '../utilities/Cross.svelte';
+
+	const routeModules = import.meta.glob('/src/routes/authorized/*/+page.svelte');
+	const routes = Object.keys(routeModules)
+		.flatMap((path) => {
+			const slug = path.match(/\/routes\/authorized\/([^/]+)\/\+page\.svelte$/)?.[1];
+			if (!slug) return [];
+			// Guaranteed to be a valid route: the slug comes straight from an existing +page.svelte.
+			return [
+				{
+					href: `/authorized/${slug}` as Pathname,
+					label: slug.charAt(0).toUpperCase() + slug.slice(1)
+				}
+			];
+		})
+		.sort((a, b) => a.label.localeCompare(b.label));
 </script>
 
 <div class="navbar min-h-auto h-13 p-0">
@@ -18,16 +35,9 @@
 	<div class="grow"></div>
 	<div class="flex-none">
 		<ul class="menu menu-horizontal p-0 [&_a]:rounded-none [&_summary]:rounded-none">
-			<li><a class="" href={null}>Link</a></li>
-			<li>
-				<details>
-					<summary>Parent</summary>
-					<ul class="bg-base-100 rounded-t-none p-2">
-						<li><a href={null}>Link 1</a></li>
-						<li><a href={null}>Link 2</a></li>
-					</ul>
-				</details>
-			</li>
+			{#each routes as route (route.href)}
+				<li><a href={resolve(route.href)}>{route.label}</a></li>
+			{/each}
 		</ul>
 	</div>
 </div>
