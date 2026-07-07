@@ -5,21 +5,13 @@
 	let { form }: { form: ActionData } = $props();
 </script>
 
-<h1>Login</h1>
 <form method="post" action="?/signInEmail" use:enhance>
-	<label>
-		Email
-		<input type="email" name="email" />
-	</label>
-	<label>
-		Password
-		<input type="password" name="password" />
-	</label>
-	<label>
-		Name (for registration)
-		<input name="name" />
-	</label>
-	<button>Login</button>
-	<button formaction="?/signUpEmail">Register</button>
+	<fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+		<label class="label" for="email">Email</label>
+		<input id="email" type="email" class="input" placeholder="example@email.com" />
+		<label class="label" for="password">Password</label>
+		<input id="password" type="password" class="input" placeholder="Password" />
+		<button class="btn btn-neutral mt-4" type="submit">Login</button>
+		<p style="color: red">{form?.message ?? ''}</p>
+	</fieldset>
 </form>
-<p style="color: red">{form?.message ?? ''}</p>

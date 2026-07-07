@@ -8,7 +8,7 @@
 <CopticBackground>
 	<div class="flex">
 		<div class="flex-1"></div>
-		<div class="flex-2 p-16 bg-primary-content text-primary text-4xl font-bold">
+		<div class="flex-2 p-16 bg-base-200 text-primary text-4xl font-bold">
 			{@render children()}
 		</div>
 	</div>
