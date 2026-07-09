@@ -20,7 +20,7 @@
 		.sort((a, b) => a.label.localeCompare(b.label));
 </script>
 
-<div class="navbar min-h-auto h-13 p-0">
+<div class="navbar min-h-auto h-13 p-0 bg-base-200 border-b border-base-300">
 	<div class="flex-none">
 		<div class="flex items-center">
 			<span class=" text-primary px-4 text-3xl">
@@ -34,7 +34,7 @@
 	<div class="flex-none"></div>
 	<div class="grow"></div>
 	<div class="flex-none">
-		<ul class="menu menu-horizontal p-0 [&_a]:rounded-none [&_summary]:rounded-none">
+		<ul class="menu menu-horizontal">
 			{#each routes as route (route.href)}
 				<li><a href={resolve(route.href)}>{route.label}</a></li>
 			{/each}
