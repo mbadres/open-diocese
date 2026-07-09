@@ -1,9 +1,10 @@
 @import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cardo:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+Coptic&display=swap');
 @plugin "daisyui";
 
 @plugin "daisyui/theme" {
-	name: 'diosece';
-	default: true;
+	name: 'diocese';
+	default: false;
 	prefersdark: false;
 	color-scheme: 'light';
 	--color-base-100: oklch(100% 0 0);
@@ -69,6 +70,54 @@
 	--border: 1px;
 	--depth: 1;
 	--noise: 0;
+}
+
+@plugin "daisyui/theme" {
+	name: 'palimpsest';
+	default: true;
+	prefersdark: false;
+	color-scheme: 'light';
+	/* Parchment / backgrounds */
+	--color-base-100: oklch(96.68% 0.03 92.317); /* parchment #FBF4DE */
+	--color-base-200: oklch(94.01% 0.046 92.186); /* parchment-2 #F6EBC9 */
+	--color-base-300: oklch(83.69% 0.063 92.149); /* rule #D8C99B */
+	--color-base-content: oklch(26.57% 0.024 77.51); /* ink #2C2418 */
+	/* Bordeaux */
+	--color-primary: oklch(40.95% 0.114 17.265); /* bordeaux #7C2A33 */
+	--color-primary-content: oklch(96.68% 0.03 92.317); /* parchment #FBF4DE */
+	/* Sage / olive */
+	--color-secondary: oklch(62.73% 0.072 108.305); /* sage #8C8C58 */
+	--color-secondary-content: oklch(47.2% 0.056 108.371); /* olive-deep #5E5E38 */
+	/* Gold (illumination) */
+	--color-accent: oklch(65.04% 0.108 77.215); /* gold #B4863A */
+	--color-accent-content: oklch(31.92% 0.086 15.186); /* oxblood #561C24 */
+	/* Oxblood */
+	--color-neutral: oklch(31.92% 0.086 15.186); /* oxblood #561C24 */
+	--color-neutral-content: oklch(90.26% 0.087 92.503); /* butter #F3DE9C */
+	--color-info: oklch(74% 0.16 232.661);
+	--color-info-content: oklch(29% 0.066 243.157);
+	--color-success: oklch(76% 0.177 163.223);
+	--color-success-content: oklch(37% 0.077 168.94);
+	--color-warning: oklch(82% 0.189 84.429);
+	--color-warning-content: oklch(41% 0.112 45.904);
+	--color-error: oklch(51.35% 0.109 18.694); /* bordeaux-tint #9C4A4E */
+	--color-error-content: oklch(96.68% 0.03 92.317); /* parchment #FBF4DE */
+	--radius-selector: 0.25rem;
+	--radius-field: 0.25rem;
+	--radius-box: 0.4375rem;
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+	--border: 1px;
+	--depth: 0;
+	--noise: 0;
+}
+
+[data-theme='palimpsest'] {
+	--font-serif: 'EB Garamond', Georgia, serif;
+	--font-manuscript: 'Cardo', 'EB Garamond', serif;
+	--font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+	--font-coptic: 'Noto Sans Coptic', 'Cardo', serif;
+	font-family: var(--font-serif);
 }
 
 html {
