@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Footer from '$lib/components/ui/Footer.svelte';
-	import Header from '$lib/components/ui/Header.svelte';
+	import Footer from '$lib/components/components/Footer.svelte';
+	import Header from '$lib/components/components/Header.svelte';
 	import type { LayoutProps } from './$types';
 
 	let { children }: LayoutProps = $props();

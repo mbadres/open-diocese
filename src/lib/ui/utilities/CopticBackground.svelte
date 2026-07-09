@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Coptic from '$lib/components/languages/Coptic.svelte';
-	import CopticSermonMountain from '$lib/components/utilities/CopticSermonMountain.svelte';
+	import Coptic from '$lib/ui/languages/Coptic.svelte';
+	import CopticSermonMountain from '$lib/ui/utilities/CopticSermonMountain.svelte';
 	import type { Snippet } from 'svelte';
 
 	let { children }: { children: Snippet } = $props();

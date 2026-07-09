@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CopticBackground from '$lib/components/utilities/CopticBackground.svelte';
+	import CopticBackground from '$lib/ui/utilities/CopticBackground.svelte';
 	import type { Snippet } from 'svelte';
 
 	let { children }: { children: Snippet } = $props();
