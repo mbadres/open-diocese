@@ -5,8 +5,14 @@
 	let { data }: { data: PageServerData } = $props();
 </script>
 
-<h1>Hi, {data.user.name}!</h1>
-<p>Your user ID is {data.user.id}.</p>
-<form method="post" action="?/signOut" use:enhance>
-	<button>Sign out</button>
+<form
+	method="post"
+	action="?/signOut"
+	use:enhance
+	class="flex min-h-screen items-center justify-center"
+>
+	<fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+		<p>Your user ID is {data.user.id}.</p>
+		<button class="btn btn-neutral" type="submit">Sign out</button>
+	</fieldset>
 </form>

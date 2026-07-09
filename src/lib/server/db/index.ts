@@ -27,7 +27,7 @@ async function createDb() {
 		const { drizzle } = await import('drizzle-orm/mysql2');
 		const mysql = await import('mysql2/promise');
 		const schema = await import('./schema.mysql');
-		const client = await mysql.default.createConnection(url);
+		const client = mysql.default.createPool(url);
 		return drizzle(client, { schema, mode: 'default' });
 	} else {
 		const { drizzle } = await import('drizzle-orm/postgres-js');
